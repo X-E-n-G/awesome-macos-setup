@@ -4,7 +4,7 @@
     "disableScrollingIf3" : true,
     "BTTForceNormalClickPressure5F" : 200,
     "disableScrollingIf2" : true,
-    "BTTDidRegisterForUpdateStats" : "2.641",
+    "BTTDidRegisterForUpdateStats" : "2.645",
     "BTTShowControlStrip" : false,
     "BTTShowControlStripItem" : false,
     "BTTForceForceClickPressure5F" : 600,
@@ -117,7 +117,7 @@
     "BSTCornerRoundness" : 40,
     "BTTDismissIfNothingToShow" : false,
     "BSTPreventTopMissionControl" : true,
-    "BTTNumberOfStarts" : 1669,
+    "BTTNumberOfStarts" : 1969,
     "BTTHTTPServerEncrypted" : false,
     "showKeyboardTab" : true,
     "BTTConvertedDevices" : true,
@@ -135,7 +135,7 @@
     "BTTTouchBarUseMonoSpacedFont" : true,
     "optDisables" : false
   },
-  "BTTPresetUUID" : "BD6BE4CF-4172-4ABD-A4E7-ACBA75755830",
+  "BTTPresetUUID" : "71717E40-0F6D-475F-A696-7A998AF0EC01",
   "BTTPresetContent" : [
     {
       "BTTAppBundleIdentifier" : "BT.G",
@@ -144,6 +144,38 @@
 
       },
       "BTTTriggers" : [
+        {
+          "BTTWidgetName" : "Loading workspace…",
+          "BTTTriggerType" : 642,
+          "BTTTriggerTypeDescription" : "Shell Script \/ Task Widget",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
+          "BTTPredefinedActionType" : -1,
+          "BTTPredefinedActionName" : "No Action",
+          "BTTShellScriptWidgetGestureConfig" : "\/bin\/bash:::-c",
+          "BTTEnabled2" : 1,
+          "BTTUUID" : "A064F937-DAF9-4479-913A-CD3CD7E4631E",
+          "BTTEnabled" : 1,
+          "BTTOrder" : 10,
+          "BTTTriggerConfig" : {
+            "BTTScriptType" : 0,
+            "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
+            "BTTTouchBarItemIconWidth" : 22,
+            "BTTTouchBarColorRegex" : "^0\/0$",
+            "BTTTouchBarItemPlacement" : 2,
+            "BTTTouchBarAlternateBackgroundColor" : "0.000000, 0.000000, 0.000000, 255.000000",
+            "BTTTouchBarButtonCornerRadius" : 6,
+            "BTTTouchBarFontColor" : "0.000000, 255.000000, 135.243606, 255.000000",
+            "BTTTouchBarScriptUpdateInterval" : 5,
+            "BTTTouchBarShellScriptString" : "source ~\/.bash_profile\nbtt_usr_root=${BTT_USR_ROOT:-~\/Work\/tmp\/btt}\n\/bin\/bash \"${btt_usr_root}\/app-region\/gitdiff-controller.sh\"",
+            "BTTTouchBarAppleScriptStringRunOnInit" : false,
+            "BTTTouchBarLongPressActionName" : "create-pull-request",
+            "BTTTouchBarButtonName" : "Loading workspace…",
+            "BTTTouchBarFreeSpaceAfterButton" : -5,
+            "BTTTouchBarItemIconHeight" : 22,
+            "BTTTouchBarItemPadding" : -15,
+            "BTTTouchBarFontColorAlternate" : "255.000000, 255.000000, 255.000000, 255.000000"
+          }
+        },
         {
           "BTTWidgetName" : "Loading calendar…",
           "BTTTriggerType" : 642,
@@ -156,7 +188,7 @@
           "BTTEnabled2" : 1,
           "BTTUUID" : "10331142-3579-4C40-B44F-6883F03EBC15",
           "BTTEnabled" : 1,
-          "BTTOrder" : 10,
+          "BTTOrder" : 9,
           "BTTTriggerConfig" : {
             "BTTScriptType" : 0,
             "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
@@ -173,38 +205,6 @@
             "BTTTouchBarItemIconHeight" : 22,
             "BTTTouchBarItemPadding" : -22,
             "BTTTouchBarFontColorAlternate" : "255.000000, 57.773438, 95.384682, 255.000000"
-          }
-        },
-        {
-          "BTTWidgetName" : "Loading workspace…",
-          "BTTTriggerType" : 642,
-          "BTTTriggerTypeDescription" : "Shell Script \/ Task Widget",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchBar",
-          "BTTPredefinedActionType" : -1,
-          "BTTPredefinedActionName" : "No Action",
-          "BTTShellScriptWidgetGestureConfig" : "\/bin\/bash:::-c",
-          "BTTEnabled2" : 1,
-          "BTTUUID" : "A064F937-DAF9-4479-913A-CD3CD7E4631E",
-          "BTTEnabled" : 1,
-          "BTTOrder" : 11,
-          "BTTTriggerConfig" : {
-            "BTTScriptType" : 0,
-            "BTTTouchBarButtonColor" : "0.000000, 0.000000, 0.000000, 255.000000",
-            "BTTTouchBarItemIconWidth" : 22,
-            "BTTTouchBarColorRegex" : "^0\/0$",
-            "BTTTouchBarItemPlacement" : 2,
-            "BTTTouchBarAlternateBackgroundColor" : "0.000000, 0.000000, 0.000000, 255.000000",
-            "BTTTouchBarButtonCornerRadius" : 6,
-            "BTTTouchBarFontColor" : "0.000000, 221.992372, 93.116466, 255.000000",
-            "BTTTouchBarScriptUpdateInterval" : 5,
-            "BTTTouchBarShellScriptString" : "source ~\/.bash_profile\nbtt_usr_root=${BTT_USR_ROOT:-~\/Work\/tmp\/btt}\n\/bin\/bash \"${btt_usr_root}\/app-region\/gitdiff-controller.sh\"",
-            "BTTTouchBarAppleScriptStringRunOnInit" : false,
-            "BTTTouchBarLongPressActionName" : "create-pull-request",
-            "BTTTouchBarButtonName" : "Loading workspace…",
-            "BTTTouchBarFreeSpaceAfterButton" : -5,
-            "BTTTouchBarItemIconHeight" : 22,
-            "BTTTouchBarItemPadding" : -20,
-            "BTTTouchBarFontColorAlternate" : "255.000000, 255.000000, 255.000000, 255.000000"
           }
         }
       ]
