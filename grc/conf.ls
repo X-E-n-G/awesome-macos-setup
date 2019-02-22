@@ -36,7 +36,7 @@ colours=default,bright_yellow ,yellow
 =======
 # Date-Time => G1=Month G2=Day G3=Hour G4=Minutes G5=Year
 regexp=([A-Z][a-z]{2})\s([ 1-3]\d)\s(?:([0-2]?\d):([0-5]\d)(?=[\s,]|$)|\s*(\d{4}))
-colours=unchanged,cyan,cyan,cyan,cyan,bold magenta
+colours=unchanged,blue,blue,blue,blue,bold blue
 =======
 # root
 regexp=\s(root|wheel)(?=\s|$)
@@ -53,15 +53,15 @@ colours=unchanged,unchanged,bold white
 -
 # owner rwx
 regexp=(?<=[-bcCdDlMnpPs?])(-|(r))(-|(w))(-|([xsStT]))(?=[-r][-w][-xsStT][-r][-w][-xsStT])
-colours=unchanged,unchanged,bright_green,unchanged,bright_green,unchanged,bright_green
+colours=unchanged,unchanged,bold green,unchanged,bold green,unchanged,bold green
 -
 # group rwx
 regexp=(?<=[-bcCdDlMnpPs?][-r][-w][-xsStT])(-|(r))(-|(w))(-|([xsStT]))(?=[-r][-w][-xsStT])
-colours=unchanged,unchanged,yellow,unchanged,yellow,unchanged,yellow
+colours=unchanged,unchanged,bold yellow,unchanged,bold yellow,unchanged,bold yellow
 -
 # other rwx
 regexp=(?<=[-bcCdDlMnpPs?][-r][-w][-xsStT][-r][-w][-xsStT])(-|(r))(-|(w))(-|([xsStT]))
-colours=unchanged,unchanged,bright_red,unchanged,bright_red,unchanged,bright_red
+colours=unchanged,unchanged,bold red,unchanged,bold red,unchanged,bold red
 -
 # sStT all
 regexp=(?<=[-bcCdDlMnpPs?])[-r][-w]([sStT])[-r][-w]([sStT])[-r][-w]([sStT])

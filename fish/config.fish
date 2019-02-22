@@ -1,4 +1,5 @@
 export GOPATH='/Users/ullaakut/Work/go'
+
 set PATH $PATH $GOPATH/bin/
 
 # Colorized outputs
@@ -11,9 +12,13 @@ alias ifconfig 'grc ifconfig'
 alias netstat 'grc netstat'
 alias ping 'grc ping'
 alias ps 'grc ps'
+alias nmap 'grc nmap'
+alias kubectl 'grc -c conf.kubectl kubectl'
+alias cat 'bat --theme "Monokai Extended Origin"'
 
 alias h 'history'
 alias j 'jobs -l'
+alias w 'cd /Users/ullaakut/Work'
 
 # Docker compose
 alias dcps 'docker-compose ps'
@@ -26,25 +31,20 @@ alias dcb 'docker-compose build'
 alias dcrestart 'docker-compose restart'
 alias dcpause 'docker-compose pause'
 
-# Dedicated servers
-alias connectJooboo="ssh 5.135.158.2"
-alias connectBoojoo="ssh 5.135.158.40"
-alias updateJooboo="ssh 5.135.158.2 \"cd /usr/share/nginx/html && git pull\""
-alias updateBoojoo="ssh 5.135.159.40 \"cd /usr/share/nginx/html && git pull\""
+# Router
+alias routerReboot="cd ~/Work/shittyrouterrebooter ;and ./reboot.sh; and cd -"
 
 # Git stuff
-alias gc 'git commit -m'
+alias gc 'git commit -S -m'
 alias gs 'git status'
 alias ga 'git add'
 alias gps 'git push'
-alias glog 'git log'
+alias glog 'git log --color --graph --oneline --decorate'
 alias gdif 'git diff'
 
 # Audio notifications
 alias success 'say -v "Anna" "Prozess isten terminatet zucksesfully"'
 alias failure 'say -v "Anna" "Redden alert, kritikal error heinst been detected"'
-
-alias w 'cd /Users/ullaakut/Work'
 
 # Logbook
 function lb --description "Open my logbook of the day"
@@ -56,6 +56,10 @@ end
 
 function go --description "go wrapper for colorizing the output"
   /usr/local/bin/go $argv | sed ''/PASS/s//(printf "\033[32mPASS\033[0m")/'' | sed ''/FAIL/s//(printf "\033[31mFAIL\033[0m")/''
+end
+
+function cd --description 'cd to real path when following a symlink'
+    builtin cd (realpath $argv)
 end
 
 # Make wget continue unfinished downloads
@@ -72,3 +76,6 @@ set -g default_user ullaakut
 
 # Run BTT services
 /Users/ullaakut/Work/tmp/btt/utils/service-runner.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ullaakut/google-cloud-sdk/path.fish.inc' ]; . '/Users/ullaakut/google-cloud-sdk/path.fish.inc'; end

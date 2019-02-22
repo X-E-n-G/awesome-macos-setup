@@ -1,0 +1,23 @@
+# HEADERS
+regexp=(?:\s|^)(NAME|READY|STATUS|RESTARTS|AGE|TYPE|CLUSTER-IP|EXTERNAL-IP|PORT\(S\)|DESIRED|CURRENT|UP-TO-DATE|AVAILABLE|NODE SELECTOR|SUCCESSFUL)(?:\s|$)
+colours=default,underline
+======
+# Pods
+regexp=^([\S]*)?[\s]*([\S]*)?[\s]*([\S]*)?[\s]*([\d]*)?[\s]*([\S]*)$
+colours=unchanged,unchanged,unchanged,green,unchanged,unchanged
+======
+# Status Running
+regexp=(?:\s|^)(Running)(?:\s|$)
+colours=unchanged,green,unchanged
+======
+# Status Terminating
+regexp=(?:\s|^)(Terminating|Error)(?:\s|$)
+colours=unchanged,red,unchanged
+======
+# Status Creating
+regexp=(?:\s|^)(ContainerCreating|Completed)(?:\s|$)
+colours=unchanged,yellow,unchanged
+======
+# Not Ready
+regexp=(?:.*)(?:\s)(0\/)(?:\d)(?:.*)
+colours=unchanged,bold red,bold red,unchanged

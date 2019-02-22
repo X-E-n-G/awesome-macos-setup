@@ -150,16 +150,20 @@ function install_nerd_fonts {
 function install_sys_tools {
     SYS_TOOLS_SUCCESS=1
     echo -e $COL_GREEN"$ARROW "$COL_RESET"Installing system tools, command line apps and libraries ... "
-    brew install autoconf \
+    brew install asciinema \
+                 autoconf \
+                 bat \
                  coreutils \
                  curl \
                  ffmpeg \
                  fish \
                  findutils \
+                 go \
                  grc \
                  git \
                  imagemagick \
                  jpeg \
+                 kubernetes-helm \
                  libevent \
                  libmemcached \
                  libpng \
@@ -167,14 +171,23 @@ function install_sys_tools {
                  libtool \
                  libxml2 \
                  liblzf \
+                 masscan \
                  memcached \
                  mhash \
                  nmap \
                  openssl \
                  pkg-config \
+                 protobuf \
+                 python \
                  python3 \
+                 redis \
+                 shellcheck \
+                 transmission \
                  tree \
-                 unzip
+                 unrar \
+                 unzip \
+                 watch \
+                 wget
 
     if [ "$?" != "0" ]
     then
@@ -201,9 +214,6 @@ function brew_cleanup {
 function install_utils {
     UTILS_SUCCESS=1
     echo -e $COL_GREEN"$ARROW "$COL_RESET"Installing git & docker custom scripts... "
-    curl https://raw.githubusercontent.com/Ullaakut/awesome-osx-setup/master/utils/softcleandocker > /usr/local/bin/softcleandocker && chmod +x /usr/local/bin/softcleandocker
-    curl https://raw.githubusercontent.com/Ullaakut/awesome-osx-setup/master/utils/cleandocker > /usr/local/bin/cleandocker && chmod +x /usr/local/bin/cleandocker
-    curl https://raw.githubusercontent.com/Ullaakut/awesome-osx-setup/master/utils/killdocker > /usr/local/bin/killdocker && chmod +x /usr/local/bin/killdocker
     curl https://raw.githubusercontent.com/Ullaakut/awesome-osx-setup/master/utils/gcheck > /usr/local/bin/gcheck && chmod +x /usr/local/bin/gcheck
 
     if [ "$?" != "0" ]
