@@ -1,0 +1,16 @@
+[user]
+	name = Ullaakut
+	email = brendan.le-glaunec@epitech.eu
+	username = ullaakut
+	signingkey = 6798E09DCEE0BBED95E66BF2F207AC2012D392B2
+[core]
+	ignorecase = false
+	editor = code --wait
+[pull]
+	rebase = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg

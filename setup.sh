@@ -55,7 +55,8 @@ function install_homebrew {
     brew tap caskroom/fonts && \
     brew tap caskroom/versions && \
     brew tap homebrew/core && \
-    brew tap homebrew/services
+    brew tap homebrew/services && \
+    brew tap ldez/tap
 
     if [ "$?" != "0" ]
     then
@@ -159,10 +160,13 @@ function install_sys_tools {
                  fish \
                  findutils \
                  go \
+                 golangci-lint \
                  grc \
                  git \
+                 htop \
                  imagemagick \
                  jpeg \
+                 kubectx \
                  kubernetes-helm \
                  libevent \
                  libmemcached \
@@ -177,6 +181,7 @@ function install_sys_tools {
                  nmap \
                  openssl \
                  pkg-config \
+                 prm \
                  protobuf \
                  python \
                  python3 \
