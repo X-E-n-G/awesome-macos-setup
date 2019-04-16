@@ -151,16 +151,13 @@ function install_nerd_fonts {
 function install_sys_tools {
     SYS_TOOLS_SUCCESS=1
     echo -e $COL_GREEN"$ARROW "$COL_RESET"Installing system tools, command line apps and libraries ... "
-    brew install asciinema \
-                 autoconf \
-                 bat \
+    brew install bat \
                  coreutils \
                  curl \
                  ffmpeg \
                  fish \
                  findutils \
                  go \
-                 golangci-lint \
                  grc \
                  git \
                  htop \
@@ -233,7 +230,7 @@ function install_utils {
 function install_fish {
     FISH_SUCCESS=1
     echo -e $COL_GREEN"$ARROW "$COL_RESET"Installing fish shell... "
-    echo "/usr/local/bin/fish" >> /etc/shells
+    sudo echo "/usr/local/bin/fish" >> /etc/shells
     chsh -s /usr/local/bin/fish
 
     if [ "$?" != "0" ]
