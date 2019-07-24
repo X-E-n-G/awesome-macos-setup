@@ -16,7 +16,7 @@ You might have to re-run this command (`xcode-select --install`) after some MacO
 
 ## Homebrew
 
-Homebrew is a must have on any OSX machine. It allows you to download and update apps, plugins, packages, fonts, libraries... Pretty much anything. It is also required to install it in order to run the apps and plugins installation, the nerd fonts installation as well as the system tools installation.
+Homebrew is a must have on any MacOS machine. It allows you to download and update apps, plugins, packages, fonts, libraries... Pretty much anything. It is also required to install it in order to run the apps and plugins installation, the nerd fonts installation as well as the system tools installation.
 
 If you already have it installed, you might still want to run the `Install Homebrew` task as it will add custom homebrew casks used to download fonts, apps and tools in other instructions.
 
@@ -127,9 +127,9 @@ This will prompt you for your username and password, and then set your config to
 
 It will then also generate SSH keys and your public key will be copied to your clipboard, ready to be pasted in GitHub or whatever source control you use.
 
-## Configure OSX defaults
+## Configure MacOS defaults
 
-This will set a bunch of hidden OSX options to a more convenient state:
+This will set a bunch of hidden MacOS options to a more convenient state:
 
 * Expand "Save" and "Print" panels
 * Use current directory as default search scope in Finder
@@ -201,7 +201,7 @@ This will set a bunch of hidden OSX options to a more convenient state:
       * Toggl Dark Theme
       * Wikipedia dark material design
 * Change settings
-  * OSX
+  * MacOS
     * Hot corner to lock
     * Reduce keypress for accents as much as possible
     * Put dock on the right
