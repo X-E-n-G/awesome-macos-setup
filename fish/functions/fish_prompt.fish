@@ -7,8 +7,6 @@
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
 
-
-
 ## Set this options in your config.fish (if you want to :])
 # set -g theme_display_user yes
 # set -g theme_hide_hostname yes
@@ -32,11 +30,11 @@ set -q scm_prompt_blacklist; or set scm_prompt_blacklist
 
 set -q color_virtual_env_bg; or set color_virtual_env_bg white
 set -q color_virtual_env_str; or set color_virtual_env_str black
-set -q color_user_bg; or set color_user_bg grey
-set -q color_user_str; or set color_user_str black
+set -q color_user_bg; or set color_user_bg black
+set -q color_user_str; or set color_user_str yellow
 set -q color_dir_bg; or set color_dir_bg blue
 set -q color_dir_str; or set color_dir_str black
-set -q color_hg_changed_bg; or set color_hg_changed_bg red
+set -q color_hg_changed_bg; or set color_hg_changed_bg yellow
 set -q color_hg_changed_str; or set color_hg_changed_str black
 set -q color_hg_bg; or set color_hg_bg green
 set -q color_hg_str; or set color_hg_str black
@@ -48,10 +46,10 @@ set -q color_svn_bg; or set color_svn_bg green
 set -q color_svn_str; or set color_svn_str black
 set -q color_status_nonzero_bg; or set color_status_nonzero_bg red
 set -q color_status_nonzero_str; or set color_status_nonzero_str black
-set -q color_status_superuser_bg; or set color_status_superuser_bg grey
-set -q color_status_superuser_str; or set color_status_superuser_str black
-set -q color_status_jobs_bg; or set color_status_jobs_bg grey
-set -q color_status_jobs_str; or set color_status_jobs_str black
+set -q color_status_superuser_bg; or set color_status_superuser_bg black
+set -q color_status_superuser_str; or set color_status_superuser_str yellow
+set -q color_status_jobs_bg; or set color_status_jobs_bg black
+set -q color_status_jobs_str; or set color_status_jobs_str cyan
 
 
 # ===========================
@@ -170,29 +168,29 @@ function prompt_dir -d "Display the current directory"
 end
 
 
-# function prompt_hg -d "Display mercurial state"
-#   set -l branch
-#   set -l state
-#   if command hg id >/dev/null 2>&1
-#       set branch (command hg id -b)
-#       set state (hg_get_state)
-#       set revision (command hg id -n)
-#       set branch_symbol \uE0A0
-#       if [ "$state" = "0" ]
-#           prompt_segment $color_hg_changed_bg $color_hg_changed_str "$branch_symbol $branch:$revision ±"
-#       else
-#           prompt_segment $color_hg_bg $color_hg_str "$branch_symbol $branch:$revision"
-#       end
-#   end
-# end
+function prompt_hg -d "Display mercurial state"
+  set -l branch
+  set -l state
+  if command hg id >/dev/null 2>&1
+      set branch (command hg id -b)
+      set state (hg_get_state)
+      set revision (command hg id -n)
+      set branch_symbol \uE0A0
+      if [ "$state" = "0" ]
+          prompt_segment $color_hg_changed_bg $color_hg_changed_str "$branch_symbol $branch:$revision ±"
+      else
+          prompt_segment $color_hg_bg $color_hg_str "$branch_symbol $branch:$revision"
+      end
+  end
+end
 
-# function hg_get_state -d "Get mercurial working directory state"
-#   if hg status | grep --quiet -e "^[A|M|R|!|?]"
-#     echo 0
-#   else
-#     echo 1
-#   end
-# end
+function hg_get_state -d "Get mercurial working directory state"
+  if hg status | grep --quiet -e "^[A|M|R|!|?]"
+    echo 0
+  else
+    echo 1
+  end
+end
 
 
 function prompt_git -d "Display the current git state"
@@ -216,37 +214,40 @@ function prompt_git -d "Display the current git state"
 end
 
 
-# function prompt_svn -d "Display the current svn state"
-#   set -l ref
-#   if command svn info >/dev/null 2>&1
-#     set branch (svn_get_branch)
-#     set branch_symbol \uE0A0
-#     set revision (svn_get_revision)
-#     prompt_segment $color_svn_bg $color_svn_str "$branch_symbol $branch:$revision"
-#   end
-# end
+function prompt_svn -d "Display the current svn state"
+  set -l ref
+  if command svn info >/dev/null 2>&1
+    set branch (svn_get_branch)
+    set branch_symbol \uE0A0
+    set revision (svn_get_revision)
+    prompt_segment $color_svn_bg $color_svn_str "$branch_symbol $branch:$revision"
+  end
+end
 
-# function svn_get_branch -d "get the current branch name"
-#   svn info 2> /dev/null | awk -F/ \
-#       '/^URL:/ { \
-#         for (i=0; i<=NF; i++) { \
-#           if ($i == "branches" || $i == "tags" ) { \
-#             print $(i+1); \
-#             break;\
-#           }; \
-#           if ($i == "trunk") { print $i; break; } \
-#         } \
-#       }'
-# end
+function svn_get_branch -d "get the current branch name"
+  svn info 2> /dev/null | awk -F/ \
+      '/^URL:/ { \
+        for (i=0; i<=NF; i++) { \
+          if ($i == "branches" || $i == "tags" ) { \
+            print $(i+1); \
+            break;\
+          }; \
+          if ($i == "trunk") { print $i; break; } \
+        } \xz
+      }'
+end
 
-# function svn_get_revision -d "get the current revision number"
-#   svn info 2> /dev/null | sed -n 's/Revision:\ //p'
-# end
-
+function svn_get_revision -d "get the current revision number"
+  svn info 2> /dev/null | sed -n 's/Revision:\ //p'
+end
 
 function prompt_status -d "the symbols for a non zero exit status, root and background jobs"
     if [ $RETVAL -ne 0 ]
-      prompt_segment $color_status_nonzero_bg $color_status_nonzero_str $RETVAL
+      prompt_segment $color_status_nonzero_bg $color_status_nonzero_str "$RETVAL"
+    end
+
+    if [ $CMD_DURATION -ne 0 ]
+      prompt_segment $color_virtual_env_bg $color_virtual_env_str (echo "$CMD_DURATION 1000" | awk '{printf "%.3fs", $1 / $2}')
     end
 
     # if superuser (uid == 0)
@@ -272,9 +273,9 @@ function fish_prompt
   prompt_user
   prompt_dir
   if [ (cwd_in_scm_blacklist | wc -c) -eq 0 ]
-    # type -q hg;  and prompt_hg
+    type -q hg;  and prompt_hg
     type -q git; and prompt_git
-    # type -q svn; and prompt_svn
+    type -q svn; and prompt_svn
   end
   prompt_finish
 end

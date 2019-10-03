@@ -86,18 +86,14 @@ function install_apps_and_plugins {
                       google-chrome \
                       iterm2 \
                       istat-menus \
-                      postman \
                       qlcolorcode \
                       qlimagesize \
                       qlmarkdown \
                       qlstephen \
                       quicklook-json \
-                      resolutionator \
-                      shuttle \
                       spotify \
                       steam \
-                      the-unarchiver \
-                      visual-studio-code
+                      the-unarchiver
 
     if [ "$?" != "0" ]
     then
@@ -371,7 +367,7 @@ function configure_git {
     git config --global user.name $USERNAME && \
     git config --global user.email $EMAIL && \
     git config --global core.ignorecase false && \
-    git config --global core.editor "code --wait" && \
+    git config --global core.editor "goland --wait" && \
     git config --global pull.rebase true
 
     if [ "$?" != "0" ]

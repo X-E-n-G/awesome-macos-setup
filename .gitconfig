@@ -5,7 +5,7 @@
 	signingkey = 6798E09DCEE0BBED95E66BF2F207AC2012D392B2
 [core]
 	ignorecase = false
-	editor = code --wait
+	editor = goland --wait
 [pull]
 	rebase = true
 [url "git@github.com:"]

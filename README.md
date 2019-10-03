@@ -29,13 +29,10 @@ This instruction installs the following apps:
 * Google Chrome
 * iterm2
 * iStat menus
-* postman
-* resolutionator
 * shuttle
 * spotify
 * steam
 * The Unarchiver
-* Visual Studio Code
 
 As well as the following QuickLook plugins:
 
@@ -177,13 +174,25 @@ This will set a bunch of hidden MacOS options to a more convenient state:
   * Adobe Photoshop
   * Spectacle
   * Transmission
+  * GoLand
+  * Krisp
+  * Zoom
+  * Discord
+  * Slack
+  * Rocket
   * High Sierra Media Key Enabler
     * Open at login
   * Chrome extensions
     * AdBlock Plus
-    * Appear.in screen sharing
+    * Tampermonkey
+      * GitHub Dark Script
+    * GitHub Refined
+    * GitHub Repository Size
+    * Notification Preview for GitHub
+    * GitHub Issue Link Status
     * Material Theme for Dev tools
     * No Coin (bitcoin miner blocker)
+    * Super Netflix
     * Social Fixer for Facebook
     * Stylus
       * CircleCI Dark
@@ -192,39 +201,28 @@ This will set a bunch of hidden MacOS options to a more convenient state:
       * Dark Google Calendar
       * Dark HN
       * Dark TwitchTV
-      * GitHub Dark
       * Godoc.org Dark
       * Google clean dark
       * Slack Night mode
-      * Stackoverflow dark
+      * StackOverflow dark
       * Stylus dark
       * Toggl Dark Theme
       * Wikipedia dark material design
 * Change settings
   * MacOS
-    * Hot corner to lock
     * Reduce keypress for accents as much as possible
-    * Put dock on the right
+    * Make dock small and autohide
     * Disable dashboard
     * Reverse scroll
-    * Make trackpad as easy as possible
-    * Backup
+    * Make trackpad as hard as possible
+    * Enable tap to click
+    * Disable Spotlight in Work folder
   * iStat Menu
     * Change fan configuration to keep CPU cool
     * Try to make it look like this <br/>![this](images/menubar.png)
-  * VScode
-    * Import configuration
+  * GoLand
+    * Import configuration from account sync
     * Install extensions
-      * VS Live Share
-      * Go
-      * LaTeX Workshop
-      * markdownlint
-      * C/C++
-      * Docker
-      * Git history
-      * GitLens
-      * dep
-      * Material Theme
-      * One Monokay Theme
-      * Prettier
-
+      * Git Tool Box
+      * Rainbow Brackets
+      * One Dark Theme
